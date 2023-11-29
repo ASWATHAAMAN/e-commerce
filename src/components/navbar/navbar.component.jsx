@@ -9,9 +9,9 @@ const Navbar = () => (
     </div>
     <ul>
       <li className="flex gap-8 font-bold text-[18px]" >
-        <Link to="/" >Home</Link>
-        <Link to="/">Cart</Link>
-        <Link to="/">About</Link>
+        <Link to="/home" >Home</Link>
+        <Link to="/cart">Cart</Link>
+        <Link to="/about">About</Link>
       </li>
     </ul>
   </nav>

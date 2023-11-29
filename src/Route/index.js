@@ -1,3 +1,3 @@
-import { Root } from "../Route";
+import { Root } from "./root.route";
 
 export {Root}
