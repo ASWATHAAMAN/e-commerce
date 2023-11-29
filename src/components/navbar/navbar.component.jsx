@@ -11,7 +11,7 @@ const Navbar = () => (
       <li className="flex gap-8 font-bold text-[18px]" >
         <Link to="/home" >Home</Link>
         <Link to="/cart">Cart</Link>
-        <Link to="/about">About</Link>
+        <Link to="/signIn">SignIn</Link>
       </li>
     </ul>
   </nav>
