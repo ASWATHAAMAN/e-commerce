@@ -2,27 +2,27 @@ const Categories = [
   {
     id: 1,
     title: `TV`,
-    imgUrl: `https://www.shutterstock.com/image-photo/4k-monitor-isolated-on-white-260nw-478603525.jpg`,
+    imgUrl: `https://media.istockphoto.com/id/1208777082/photo/tv-4k-flat-screen-lcd-or-oled-plasma-realistic-illustration-black-blank-hd-monitor-mockup.webp?b=1&s=170667a&w=0&k=20&c=Q_RrP19mq0ayR47QcvM_3OZYUKzh6WdKlY1Ogqy-R5s=`,
   },
   {
     id: 2,
-    title: `FRIDGES`,
-    imgUrl: `https://m.media-amazon.com/images/I/51XUKbf2QWL._SY879_.jpg`,
+    title: `MOBILES`,
+    imgUrl: `https://images.unsplash.com/photo-1592899677977-9c10ca588bbd?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MzJ8fG1vYmlsZSUyMHBob25lfGVufDB8fDB8fHww`,
   },
   {
     id: 3,
     title: `AIR CONDITIONERS`,
-    imgUrl: `https://m.media-amazon.com/images/S/al-eu-726f4d26-7fdb/47460a41-15a8-49bd-8967-459eee1f4aa5._CR0,0,1200,628_SX810_QL70_.jpg`,
+    imgUrl: `https://media.istockphoto.com/id/495606247/photo/lowering-and-turning-off-air-conditioning-to-conserve-eletricity-energy.jpg?s=612x612&w=0&k=20&c=jjyj1Ps1WrRfyKahx2-M1E2nqBlPBP4BfpbHsGiraWI=`,
   },
   {
     id: 4,
     title: `WASHING MACHINES`,
-    imgUrl: `https://m.media-amazon.com/images/S/al-eu-726f4d26-7fdb/fb328b28-f859-4e4e-8d63-64e2c8669e24._CR0,0,1200,628_SX810_QL70_.jpeg`,
+    imgUrl: `https://images.unsplash.com/photo-1551761429-8232f9f5955c?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8d2FzaGluZyUyMG1hY2hpbmVzfGVufDB8fDB8fHww`,
   },
   {
     id: 5,
     title: `LAPTOPS`,
-    imgUrl: `https://m.media-amazon.com/images/S/al-eu-726f4d26-7fdb/a804e411-6644-4279-8917-451b03223726._CR0,0,1200,628_SX810_QL70_.png`,
+    imgUrl: `https://images.unsplash.com/photo-1611078489935-0cb964de46d6?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8bGFwdG9wc3xlbnwwfHwwfHx8MA%3D%3D`,
   },
 ];
 export {Categories}
