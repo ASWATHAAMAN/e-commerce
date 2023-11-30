@@ -1,5 +1,7 @@
+import { Directory } from "../directory/directory.component";
+
 const Home = () => {
-  return (<h1>Home</h1>  );
-}
- 
-export {Home};
+  return <Directory />  ;
+};
+
+export { Home };
