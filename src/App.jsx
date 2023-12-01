@@ -1,12 +1,12 @@
 import { Root } from "./Route";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { SignIn, Cart, Home,  } from "./components";
-import {ErrorPage} from "./Route"
+import ErrorPage from "./Route";
 const router = createBrowserRouter([
   {
     path: "/",
     element: <Root />,
-    errorElement:<ErrorPage/>,
+    errorElement: <ErrorPage/>,
     children: [
       {
         path: "",

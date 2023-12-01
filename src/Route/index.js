@@ -1,4 +1,5 @@
 import { Root } from "./root.route";
-import {ErrorPage} from "../Route"
+import ErrorPage from "../Route/error.route"
 
-export {Root,ErrorPage}
+export {Root}
+export default ErrorPage
