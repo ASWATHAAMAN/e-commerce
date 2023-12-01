@@ -1,4 +1,4 @@
-const SignInForm = () => {
+const SignUpForm = () => {
   return (
     <>
       <main className="flex flex-col justify-center ">
@@ -8,6 +8,17 @@ const SignInForm = () => {
         </span>
         <div className="flex flex-col gap-4 my-8">
           <div>
+            <label htmlFor="name" className="font-[500]">
+              Display Name
+            </label>
+            <br />
+            <input
+              type="text"
+              id="name"
+              className="border-b-2 border-black pr-32 outline-none"
+            />
+          </div>
+          <div>
             <label htmlFor="mail" className="font-[500]">
               Email
             </label>
@@ -15,7 +26,7 @@ const SignInForm = () => {
             <input
               type="email"
               id="mail"
-              className="border-b-2 border-black pr-32 outline-none"
+              className="border-b-2 border-black pr-32 outline-none "
             />
           </div>
           <div>
@@ -29,24 +40,29 @@ const SignInForm = () => {
               className="border-b-2 border-black pr-32 outline-none"
             />
           </div>
+          <div>
+            <label htmlFor="pass" className="font-[500]">
+              Confirm Password
+            </label>
+            <br />
+            <input
+              type="password"
+              id="pass"
+              className="border-b-2 border-black pr-32 outline-none"
+            />
+          </div>
         </div>
         <div className="flex gap-4 text-[14px]">
           <button
             type="submit"
             className="border-2 border-black px-4 py-1 bg-black text-white"
           >
-            SIGN IN
-          </button>
-          <button
-            type="submit"
-            className="border-2 border-blue-600 px-4 py-1 bg-blue-600 text-white"
-          >
-            GOOGLE SIGN IN
+            SIGN UP
           </button>
         </div>
       </main>
     </>
   );
-};
-
-export default SignInForm;
+}
+ 
+export default SignUpForm;

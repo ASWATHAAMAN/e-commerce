@@ -1,5 +1,14 @@
+import SignInForm from "../SignInForm/signinform.component";
+import SignUpForm from "../SignUpForm/signupform.component";
 const SignIn = () => {
-  return ( <h1>SignIn</h1> );
-}
- 
-export {SignIn};
+  return (
+    <>
+      <main className="flex justify-between items-start w-[85%] mt-[4rem] mx-auto">
+        <SignInForm />
+        <SignUpForm />
+      </main>
+    </>
+  );
+};
+
+export { SignIn };
