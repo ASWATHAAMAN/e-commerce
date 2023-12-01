@@ -11,10 +11,10 @@ const Directory = () => {
             key={id}
           >
             <div
-              className="w-[24rem] ml-[10px] h-[18rem] bg-center "
+              className="w-[22rem] h-[18rem] bg-center "
               style={{ backgroundImage: `url(${imgUrl})` }}
             ></div>
-            <div>
+            <div className="text-[20px] font-[700] font-serif ">
               <p>{title}</p>
             </div>
           </main>
