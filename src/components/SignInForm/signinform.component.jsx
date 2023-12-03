@@ -1,4 +1,12 @@
+import { googleSignInPopUp ,createEcommerceDb} from "../../utils/firebase";
+
 const SignInForm = () => {
+  const googleSignIn = async () => {
+    const {user}= await googleSignInPopUp();
+    const userRef = await createEcommerceDb(user)
+    console.log(userRef);
+  };
+
   return (
     <>
       <main className="flex flex-col justify-center ">
@@ -40,6 +48,7 @@ const SignInForm = () => {
           <button
             type="submit"
             className="border-2 border-blue-600 px-4 py-1 bg-blue-600 text-white"
+            onClick={googleSignIn}
           >
             GOOGLE SIGN IN
           </button>
