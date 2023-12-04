@@ -21,8 +21,9 @@ const SignInForm = () => {
       alert(`password is mandatory`);
     }
     try {
-      const res = await signInUserWithEmailAndPassword(email, password);
-      console.log(res);
+      const {user} = await signInUserWithEmailAndPassword(email, password);
+      console.log(user);
+      setSignInFields(defaultFields)
     } catch (err) {
       console.log(`error occurred`, err.message);
       console.log(err.code);

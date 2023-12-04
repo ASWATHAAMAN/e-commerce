@@ -31,6 +31,7 @@ const SignUpForm = () => {
       );
       const userRef = await createEcommerceDb(user, { displayName });
       console.log(userRef);
+      setFormFields(defaultFormFields)
     } catch (err) {
       console.log(`error occurred`, err.message);
       console.log(err.code);
