@@ -1,4 +1,5 @@
 import { createAuthUserWithEmailAndPassword } from "../../utils/firebase";
+import { createEcommerceDb } from "../../utils/firebase";
 import { useState } from "react";
 const defaultFormFields = {
   displayName: "",
@@ -7,25 +8,35 @@ const defaultFormFields = {
   confirmPassword: "",
 };
 const SignUpForm = () => {
-  const [formFields, setFormFields] = useState(defaultFormFields);
+  const [formFields, setFormFields] = useState({ defaultFormFields });
   const { displayName, email, password, confirmPassword } = formFields;
   const submitHandler = async (e) => {
     e.preventDefault();
-     if (!displayName || !email) {
-       alert(`Fill all the fields`);
-       return;
-     }
-    if (!password || !confirmPassword) {
-      alert(`password do not match`);
-      return;
+    if (!displayName) {
+      alert(`name is mandatory`);
     }
-   
+    if (!email) {
+      alert(`email is mandatory`);
+    }
+    if (password !== confirmPassword) {
+      // hello
+      alert(`password do not match`);
+    } else {
+      console.log(`form submitted successfully`);
+    } 
     try {
-      const res = await createAuthUserWithEmailAndPassword(email, password);
-      console.log(res);
+      const { user } = await createAuthUserWithEmailAndPassword(
+        email,
+        password
+      );
+      const userRef = await createEcommerceDb(user, { displayName });
+      console.log(userRef);
     } catch (err) {
-      console.log(`error occurred`).err.message;
+      console.log(`error occurred`, err.message);
       console.log(err.code);
+      if (err.code === `auth/email-already-in-use`) {
+        alert(`email already in use`);
+      }
     }
   };
   const changeHandler = (e) => {
@@ -48,7 +59,7 @@ const SignUpForm = () => {
             <input
               type="text"
               id="name"
-              name="name"
+              name="displayName"
               value={displayName}
               onChange={changeHandler}
               className="border-b-2 border-black pr-32 outline-none"
@@ -62,7 +73,7 @@ const SignUpForm = () => {
             <input
               type="email"
               id="mail"
-              name="mail"
+              name="email"
               value={email}
               onChange={changeHandler}
               className="border-b-2 border-black pr-32 outline-none "
@@ -90,7 +101,7 @@ const SignUpForm = () => {
             <input
               type="password"
               id="pass"
-              name="pass"
+              name="confirmPassword"
               value={confirmPassword}
               onChange={changeHandler}
               className="border-b-2 border-black pr-32 outline-none"

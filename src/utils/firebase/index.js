@@ -27,7 +27,7 @@ const googleSignInPopUp = () => {
 };
 
 const eCommercedb = getFirestore(eCommerceApp);
-const createEcommerceDb = async (userFun) => {
+const createEcommerceDb = async (userFun,extraInformation={}) => {
   if (!userFun) return;
 
   const userRef = doc(eCommercedb, `users`, userFun.uid);
@@ -41,6 +41,7 @@ const createEcommerceDb = async (userFun) => {
         displayName,
         email,
         createdAt,
+        ...extraInformation,
       });
     } catch (err) {
       console.log("error creating the user", err.message);
@@ -49,6 +50,8 @@ const createEcommerceDb = async (userFun) => {
 };
 const createAuthUserWithEmailAndPassword = async (email, password) => {
   if (!email || !password) return;
+  console.log(email);
+  console.log(password);
   return await createUserWithEmailAndPassword(commerceAuth, email, password);
 };
 const signInUserWithEmailAndPassword = async (email, password) => {

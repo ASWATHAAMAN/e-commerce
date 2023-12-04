@@ -1,9 +1,39 @@
-import { googleSignInPopUp ,createEcommerceDb} from "../../utils/firebase";
-
+import { googleSignInPopUp, createEcommerceDb } from "../../utils/firebase";
+import { useState } from "react";
+import { signInUserWithEmailAndPassword } from "../../utils/firebase";
+const defaultFields = {
+  email: "",
+  password: "",
+};
 const SignInForm = () => {
+  const [signInFields, setSignInFields] = useState({ defaultFields });
+  const { email, password } = signInFields;
+  const handlerChange = (e) => {
+    const { name, value } = e.target;
+    setSignInFields({ ...signInFields, [name]: value });
+  };
+  const handlerSubmit = async (e) => {
+    e.preventDefault();
+    if (!email) {
+      alert(`email is mandatory`);
+    }
+    if (!password) {
+      alert(`password is mandatory`);
+    }
+    try {
+      const res = await signInUserWithEmailAndPassword(email, password);
+      console.log(res);
+    } catch (err) {
+      console.log(`error occurred`, err.message);
+      console.log(err.code);
+      if (err.code === `auth/invalid-credential`) {
+        alert(`Invalid Authentication`);
+      }
+    }
+  };
   const googleSignIn = async () => {
-    const {user}= await googleSignInPopUp();
-    const userRef = await createEcommerceDb(user)
+    const { user } = await googleSignInPopUp();
+    const userRef = await createEcommerceDb(user);
     console.log(userRef);
   };
 
@@ -14,7 +44,7 @@ const SignInForm = () => {
         <span className="text-[16px] font-[500]">
           Sign up with your email and password
         </span>
-        <div className="flex flex-col gap-4 my-8">
+        <form className="flex flex-col gap-8 my-8" onSubmit={handlerSubmit}>
           <div>
             <label htmlFor="mail" className="font-[500]">
               Email
@@ -23,6 +53,9 @@ const SignInForm = () => {
             <input
               type="email"
               id="mail"
+              name="email"
+              value={email}
+              onChange={handlerChange}
               className="border-b-2 border-black pr-32 outline-none"
             />
           </div>
@@ -34,25 +67,28 @@ const SignInForm = () => {
             <input
               type="password"
               id="password"
+              name="password"
+              value={password}
+              onChange={handlerChange}
               className="border-b-2 border-black pr-32 outline-none"
             />
           </div>
-        </div>
-        <div className="flex gap-4 text-[14px]">
-          <button
-            type="submit"
-            className="border-2 border-black px-4 py-1 bg-black text-white"
-          >
-            SIGN IN
-          </button>
-          <button
-            type="submit"
-            className="border-2 border-blue-600 px-4 py-1 bg-blue-600 text-white"
-            onClick={googleSignIn}
-          >
-            GOOGLE SIGN IN
-          </button>
-        </div>
+          <div className="flex gap-4 text-[14px]">
+            <button
+              type="submit"
+              className="border-2 border-black px-4 py-1 bg-black text-white"
+            >
+              SIGN IN
+            </button>
+            <button
+              type="submit"
+              className="border-2 border-blue-600 px-4 py-1 bg-blue-600 text-white"
+              onClick={googleSignIn}
+            >
+              GOOGLE SIGN IN
+            </button>
+          </div>
+        </form>
       </main>
     </>
   );
