@@ -1,9 +1,27 @@
-import { createContext, useState } from "react";
+import { createContext, useContext, useEffect, useState } from "react";
+import {
+  createEcommerceDb,
+  onAuthStateChangedFunction,
+} from "../utils/firebase";
 
-const userContext = createContext();
-const userProvider = ({ Children }) => {
-  const [user, setUser] = useState(null);
-  const values = { user, setUser };
-  <userContext.Provider value={values}>{Children}</userContext.Provider>;
+const UserContext = createContext();
+const UserProvider = ({ Children }) => {
+  const [currentUser, setCurrentUser] = useState(null);
+
+  useEffect(() => {
+    const signOff = onAuthStateChangedFunction((user) => {
+      setCurrentUser(user);
+      if (user) {
+        createEcommerceDb(user);
+      }
+    });
+    return signOff;
+  }, []);
+  const values = { currentUser, setCurrentUser };
+  <UserContext.Provider value={values}>{Children}</UserContext.Provider>;
 };
-export { userProvider };
+
+const useUserGlobalContext = () => {
+  return useContext(UserContext);
+};
+export { UserProvider, useUserGlobalContext };

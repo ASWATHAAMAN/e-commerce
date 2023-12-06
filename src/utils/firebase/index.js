@@ -6,6 +6,8 @@ import {
   signInWithPopup,
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
+  onAuthStateChanged,
+  signOut,
 } from "firebase/auth";
 import { getFirestore, doc, setDoc, getDoc } from "firebase/firestore";
 
@@ -27,7 +29,7 @@ const googleSignInPopUp = () => {
 };
 
 const eCommercedb = getFirestore(eCommerceApp);
-const createEcommerceDb = async (userFun,extraInformation={}) => {
+const createEcommerceDb = async (userFun, extraInformation = {}) => {
   if (!userFun) return;
 
   const userRef = doc(eCommercedb, `users`, userFun.uid);
@@ -59,9 +61,19 @@ const signInUserWithEmailAndPassword = async (email, password) => {
   return await signInWithEmailAndPassword(commerceAuth, email, password);
 };
 
+const onAuthStateChangedFunction = (callback) => {
+  return onAuthStateChanged(commerceAuth, callback);
+};
+
+const userSignOut = () => {
+  return signOut(commerceAuth);
+};
+
 export {
   googleSignInPopUp,
   createEcommerceDb,
   createAuthUserWithEmailAndPassword,
-  signInUserWithEmailAndPassword
+  signInUserWithEmailAndPassword,
+  onAuthStateChangedFunction,
+  userSignOut,
 };
