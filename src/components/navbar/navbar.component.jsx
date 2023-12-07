@@ -1,11 +1,11 @@
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import { useUserGlobalContext } from "../../context/user.context";
 import { userSignOut } from "../../utils/firebase";
-const Navbar = () => {
+const Navbar = ({ isActive }) => {
   const { currentUser } = useUserGlobalContext();
-  const signOutHandler = async()=>{
-     const res = await userSignOut()
-  }
+  const signOutHandler = async () => {
+    const res = await userSignOut();
+  };
   return (
     <>
       <nav className="m-[1rem] mx-[5rem] flex items-center justify-between">
@@ -17,12 +17,35 @@ const Navbar = () => {
         </div>
         <ul>
           <li className="flex gap-8 font-bold text-[18px]">
-            <Link to="/home">Home</Link>
-            <Link to="/cart">Cart</Link>
+            <NavLink
+              to="/home"
+              className={({ isActive }) =>
+                isActive ? "text-red-600 " : "text-blue-600 "
+              }
+            >
+              Home
+            </NavLink>
+            <NavLink
+              to="/cart"
+              className={({ isActive }) =>
+                isActive ? "text-red-600 " : "text-blue-600 "
+              }
+            >
+              Cart
+            </NavLink>
             {currentUser ? (
-              <span onClick={signOutHandler} className="cursor-pointer ">Sign Out</span>
+              <span onClick={signOutHandler} className="cursor-pointer ">
+                Sign Out
+              </span>
             ) : (
-              <Link to="/signIn">Sign In</Link>
+              <NavLink
+                to="/signIn"
+                className={({ isActive }) =>
+                  isActive ? "text-red-600 " : "text-blue-600 "
+                }
+              >
+                Sign In
+              </NavLink>
             )}
           </li>
         </ul>
