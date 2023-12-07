@@ -20,7 +20,7 @@ const Navbar = () => {
             <Link to="/home">Home</Link>
             <Link to="/cart">Cart</Link>
             {currentUser ? (
-              <span onClick={signOutHandler}>Sign Out</span>
+              <span onClick={signOutHandler} className="cursor-pointer ">Sign Out</span>
             ) : (
               <Link to="/signIn">Sign In</Link>
             )}

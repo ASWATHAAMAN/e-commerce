@@ -1,6 +1,12 @@
 import { googleSignInPopUp, createEcommerceDb } from "../../utils/firebase";
 import { useState } from "react";
 import { signInUserWithEmailAndPassword } from "../../utils/firebase";
+const googleSignIn = async () => {
+  const { user } = await googleSignInPopUp();
+  const userRef = await createEcommerceDb(user);
+  console.log(userRef);
+  return;
+};
 const defaultFields = {
   email: "",
   password: "",
@@ -31,11 +37,6 @@ const SignInForm = () => {
         alert(`Invalid Authentication`);
       }
     }
-  };
-  const googleSignIn = async () => {
-    const { user } = await googleSignInPopUp();
-    const userRef = await createEcommerceDb(user);
-    console.log(userRef);
   };
 
   return (

@@ -5,7 +5,8 @@ import {
 } from "../utils/firebase";
 
 const UserContext = createContext();
-const UserProvider = ({ Children }) => {
+const UserProvider = ({ children }) => {
+  
   const [currentUser, setCurrentUser] = useState(null);
 
   useEffect(() => {
@@ -18,7 +19,8 @@ const UserProvider = ({ Children }) => {
     return signOff;
   }, []);
   const values = { currentUser, setCurrentUser };
-  <UserContext.Provider value={values}>{Children}</UserContext.Provider>;
+  return <UserContext.Provider value={values}>{children}</UserContext.Provider>;
+  
 };
 
 const useUserGlobalContext = () => {
