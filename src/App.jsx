@@ -1,6 +1,6 @@
 import { Root } from "./Route";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import { SignIn, Cart, Home,  } from "./components";
+import { SignIn, Cart, Home, Shop, SingleProduct,  } from "./components";
 import ErrorPage from "./Route";
 const router = createBrowserRouter([
   {
@@ -24,6 +24,16 @@ const router = createBrowserRouter([
         path: "/signIn",
         element: <SignIn />,
       },
+      {
+        path:"/shop",
+        element: <Shop/>,
+        children:[
+          {
+            path:"/shop/:productName",
+            element:<SingleProduct/>
+          }
+        ]
+      }
     ],
   },
 ]);

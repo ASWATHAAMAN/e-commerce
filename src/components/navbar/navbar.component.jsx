@@ -1,7 +1,7 @@
-import { Link, NavLink } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import { useUserGlobalContext } from "../../context/user.context";
 import { userSignOut } from "../../utils/firebase";
-const Navbar = ({ isActive }) => {
+const Navbar = () => {
   const { currentUser } = useUserGlobalContext();
   const signOutHandler = async () => {
     const res = await userSignOut();
@@ -24,6 +24,14 @@ const Navbar = ({ isActive }) => {
               }
             >
               Home
+            </NavLink>
+            <NavLink
+              to="/shop"
+              className={({ isActive }) =>
+                isActive ? "text-red-600 " : "text-blue-600 "
+              }
+            >
+              Shop
             </NavLink>
             <NavLink
               to="/cart"
