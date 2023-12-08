@@ -1,11 +1,9 @@
-import { Data } from "../../constants";
 
-const Product = () => {
 
+const Product = ({id,imageUrl,price,name}) => {
   return (
     <div className="flex flex-wrap justify-center my-[2rem] gap-8 ">
-      {Data.map((data) => {
-        const { id,name, imageUrl,price } = data;
+      
         return (
           <main
             className="box-border shadow-xl p-[1rem] flex flex-col items-center gap-4  rounded-lg cursor-pointer "
@@ -21,7 +19,7 @@ const Product = () => {
             </div>
           </main>
         );
-      })}
+    
     </div>
   );
 };

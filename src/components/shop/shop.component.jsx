@@ -1,12 +1,16 @@
 import { Outlet } from "react-router-dom";
 import { Product } from "../products/products.components";
-import { Data } from "../../constants";
+import { ProductProviderGlobalContext } from "../../context/products/product.context";
 
 const Shop = () => {
+  const {products} = ProductProviderGlobalContext()
   return (
     <>
-      <Product key={Data.id} />;
       <Outlet />
+      <div>
+     {products.map((product)=> <Product key={product.id} {...product}/>
+     )}
+      </div>
     </>
   );
 };
