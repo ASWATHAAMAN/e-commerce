@@ -6,7 +6,7 @@ const router = createBrowserRouter([
   {
     path: "/",
     element: <Root />,
-    errorElement: <ErrorPage/>,
+    errorElement: <ErrorPage />,
     children: [
       {
         path: "",
@@ -25,15 +25,15 @@ const router = createBrowserRouter([
         element: <SignIn />,
       },
       {
-        path:"/shop",
-        element: <Shop/>,
-        children:[
+        path: "/shop",
+        element: <Shop />,
+        children: [
           {
-            path:"/shop/:productName",
-            element:<SingleProduct/>
-          }
-        ]
-      }
+            path: "/shop/:productName",
+            element: <SingleProduct />,
+          },
+        ],
+      },
     ],
   },
 ]);

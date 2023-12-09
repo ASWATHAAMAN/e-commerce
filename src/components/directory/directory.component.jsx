@@ -1,8 +1,14 @@
+import { useNavigate } from "react-router-dom";
 import { Categories } from "../../constants";
 
 const Directory = () => {
+  const navigate = useNavigate()
+  const navigateToCategory = (title)=>{
+    navigate(`/shop/products`)
+    
+  }
   return (
-    <div className="flex flex-wrap justify-center my-[2rem] gap-8 ">
+    <div className="flex flex-wrap justify-center my-[2rem] gap-8"onClick={navigateToCategory}>
       {Categories.map((category) => {
         const { id, imgUrl, title } = category;
         return (

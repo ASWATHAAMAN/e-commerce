@@ -3,13 +3,16 @@ import { Product } from "../products/products.components";
 import { ProductProviderGlobalContext } from "../../context/products/product.context";
 
 const Shop = () => {
-  const {products} = ProductProviderGlobalContext()
+  const { products } = ProductProviderGlobalContext();
+  // console.log(products);
+ 
   return (
     <>
       <Outlet />
       <div>
-     {products.map((product)=> <Product key={product.id} {...product}/>
-     )}
+        {products.map((product) => (
+          <Product key={product.id} product={product.items} />
+        ))}
       </div>
     </>
   );
