@@ -4,7 +4,7 @@ import { Categories } from "../../constants";
 const Directory = () => {
   const navigate = useNavigate()
   const navigateToCategory = (title)=>{
-    navigate(`/shop/products`)
+    navigate(`/shop/PRODUCTS`)
     
   }
   return (

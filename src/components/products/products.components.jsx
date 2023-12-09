@@ -1,9 +1,11 @@
+import { useNavigate } from "react-router-dom";
+
 const Product = ({ product }) => {
-  // console.log(
-  //   product.map((item) => {
-  //     console.log(item);
-  //   })
-  //   );
+  // const {addCartItem} = ProductProviderGlobalContext()
+  const navigate = useNavigate();
+  const navigateToCategory = (title) => {
+    navigate(`/cart/ITEMS`);
+  };
   return (
     <div className="flex flex-wrap justify-center my-[2rem] gap-8 ">
       {product.map((item) => {
@@ -20,9 +22,12 @@ const Product = ({ product }) => {
             <div className="text-[20px] font-[700] font-serif text-center flex flex-col gap-[10px] ">
               <p className="text-blue-500 ">{name}</p>
               <p> {price}</p>
-              <span className="text-[16px] font-[500] border-2 px-[1rem] py-[0.25rem] border-black bg-black text-white rounded-lg hover:bg-white hover:text-red-600 hover:border-blue-500 ">
+              <button type="button"
+                className="text-[16px] font-[500] border-2 px-[1rem] py-[0.25rem] border-black bg-black text-white rounded-lg hover:bg-white hover:text-red-600 hover:border-blue-500 "
+                onClick={navigateToCategory}
+              >
                 ADD TO CART
-              </span>
+              </button>
             </div>
           </main>
         );

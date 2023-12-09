@@ -5,15 +5,13 @@ import { ProductProviderGlobalContext } from "../../context/products/product.con
 const Shop = () => {
   const { products } = ProductProviderGlobalContext();
   // console.log(products);
- 
+
   return (
     <>
       <Outlet />
-      <div>
-        {products.map((product) => (
-          <Product key={product.id} product={product.items} />
-        ))}
-      </div>
+      {products.map((product) => (
+        <Product key={product.id} product={product.items} />
+      ))}
     </>
   );
 };
