@@ -1,11 +1,16 @@
 import { useNavigate } from "react-router-dom";
+import { ProductProviderGlobalContext } from "../../context/products/product.context";
 
 const Product = ({ product }) => {
-  // const {addCartItem} = ProductProviderGlobalContext()
+  const {addCartItem} = ProductProviderGlobalContext()
   const navigate = useNavigate();
-  const navigateToCategory = (title) => {
-    navigate(`/cart/ITEMS`);
-  };
+  const checkOutHandler = (id,imageUrl,name,price)=>{
+    addCartItem({id,imageUrl,name,price})
+    navigate(`/list/ITEMS`);
+  }
+  
+  // const navigateToCategory = (title) => {
+  // };
   return (
     <div className="flex flex-wrap justify-center my-[2rem] gap-8 ">
       {product.map((item) => {
@@ -22,9 +27,10 @@ const Product = ({ product }) => {
             <div className="text-[20px] font-[700] font-serif text-center flex flex-col gap-[10px] ">
               <p className="text-blue-500 ">{name}</p>
               <p> {price}</p>
-              <button type="button"
+              <button
+                type="button"
                 className="text-[16px] font-[500] border-2 px-[1rem] py-[0.25rem] border-black bg-black text-white rounded-lg hover:bg-white hover:text-red-600 hover:border-blue-500 "
-                onClick={navigateToCategory}
+                onClick={() => checkOutHandler(id, imageUrl, name, price)}
               >
                 ADD TO CART
               </button>

@@ -7,5 +7,8 @@ import { Product } from "./products/products.components";
 import { Shop } from "./shop/shop.component";
 import { SingleProduct } from "./singleProduct/singleProduct.component";
 import { CheckOut } from "./checkout/checkOut.component";
+import { CheckOutItem } from "./checkout/CheckoutItem.component";
+import { CartItem } from "./home/cartItem.component";
 
-export { Navbar, Home, Cart, SignIn,Directory,Product,Shop,SingleProduct,CheckOut};
+
+export { Navbar, Home, Cart, SignIn,Directory,Product,Shop,SingleProduct,CheckOut,CheckOutItem,CartItem};

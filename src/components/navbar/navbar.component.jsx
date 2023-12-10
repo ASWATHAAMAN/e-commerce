@@ -34,6 +34,14 @@ const Navbar = () => {
               Shop
             </NavLink>
             <NavLink
+              to="/list"
+              className={({ isActive }) =>
+                isActive ? "text-red-600 " : "text-blue-600 "
+              }
+            >
+              List
+            </NavLink>
+            <NavLink
               to="/cart"
               className={({ isActive }) =>
                 isActive ? "text-red-600 " : "text-blue-600 "
