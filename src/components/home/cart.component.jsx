@@ -15,7 +15,7 @@ const Cart = () => {
         <span>Price</span>
         <span>Remove</span>
       </main>
-     {/* <CartItem/> */}
+     <CartItem/>
     </>
   );
 };
