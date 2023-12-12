@@ -31,7 +31,7 @@ const ProductProvider = ({ children }) => {
     // console.log(cartItems);
   };
 
-  const initialValues = { products, setProducts, addCartItem,cartItems };
+  const initialValues = { products, setProducts, addCartItem,cartItems,setCartItems };
   return (
     <ProductContext.Provider value={initialValues}>
       {children}

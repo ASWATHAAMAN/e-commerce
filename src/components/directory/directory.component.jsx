@@ -9,7 +9,7 @@ const Directory = () => {
   };
   return (
     <>
-      <div className="flex justify-center items-center gap-20 border-2 w-[60%] mx-auto border-black bg-black text-white cursor-pointer">
+      <div className="flex justify-center items-center gap-20 border-2 w-[60%] mx-auto border-black bg-black text-white cursor-pointer mt-[6rem]">
         <h1 className="text-[48px] font-serif font-[900]">SALE IS LIVE!</h1>
         <div className="flex items-center gap-2 border-2 border-white bg-white text-black px-[1rem]">
           <span className="text-[26px] font-[500]">Shop Now</span>
@@ -70,20 +70,36 @@ const Directory = () => {
           const { id, imgUrl, title } = category;
           return (
             <main
-              className="box-border shadow-xl p-[1rem] flex flex-col items-center gap-4  rounded-lg cursor-pointer "
+              className="box-border shadow-xl p-[1rem] flex flex-col items-center gap-4  rounded-lg cursor-pointer bg-gradient-to-r from-black"
               key={id}
               onClick={navigateToCategory}
             >
               <div
-                className="w-[22rem] h-[18rem] bg-center "
+                className="w-[22rem] h-[18rem] bg-contain "
                 style={{ backgroundImage: `url(${imgUrl})` }}
               ></div>
-              <div className="text-[20px] font-[700] font-serif ">
+              <div className="text-[20px] font-[700] font-serif bg-gradient-to-r from-black to-yellow-500 text-white px-[1rem] py-[0.25rem]">
                 <p>{title}</p>
               </div>
             </main>
           );
         })}
+      </div>
+      <div className="flex flex-col items-center justify-center border border-blue-400 w-[90%] mx-auto my-[2rem] py-[1rem] bg-gradient-to-r from-indigo-500 from-10% via-sky-500 via-30% to-emerald-500 to-90% ...">
+        <h2 className="text-[36px] font-serif font-[700] text-white">
+          MORE KNOCKOUT OFFERS WAITING!
+        </h2>
+        <span className="flex justify-center item text-[22px] font-[600] gap-2 bg-white text-black py-[0.25rem] w-[30%] mx-auto">
+          Only On The
+          {
+            <img
+              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS989GRiByc43QI2Wn6Ci3r7oarr-aGcZkoFA&usqp=CAU"
+              alt="logo"
+              className="w-[30%] h-[10%] object-contain "
+            />
+          }
+          App
+        </span>
       </div>
     </>
   );

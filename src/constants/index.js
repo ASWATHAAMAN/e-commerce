@@ -2,17 +2,17 @@ const Categories = [
   {
     id: 1,
     title: `TV`,
-    imgUrl: `https://media.istockphoto.com/id/1208777082/photo/tv-4k-flat-screen-lcd-or-oled-plasma-realistic-illustration-black-blank-hd-monitor-mockup.webp?b=1&s=170667a&w=0&k=20&c=Q_RrP19mq0ayR47QcvM_3OZYUKzh6WdKlY1Ogqy-R5s=`,
+    imgUrl: `https://images.pexels.com/photos/6977372/pexels-photo-6977372.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load`,
   },
   {
     id: 2,
     title: `MOBILES`,
-    imgUrl: `https://images.unsplash.com/photo-1592899677977-9c10ca588bbd?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MzJ8fG1vYmlsZSUyMHBob25lfGVufDB8fDB8fHww`,
+    imgUrl: `https://images.pexels.com/photos/3520429/pexels-photo-3520429.jpeg?auto=compress&cs=tinysrgb&w=600`,
   },
   {
     id: 3,
     title: `AIR CONDITIONERS`,
-    imgUrl: `https://media.istockphoto.com/id/495606247/photo/lowering-and-turning-off-air-conditioning-to-conserve-eletricity-energy.jpg?s=612x612&w=0&k=20&c=jjyj1Ps1WrRfyKahx2-M1E2nqBlPBP4BfpbHsGiraWI=`,
+    imgUrl: `https://media.istockphoto.com/id/519620604/photo/air-conditioner-blowing-warm-air.jpg?s=612x612&w=0&k=20&c=NkPhpgxBqORgVmATSha3x6rFsy_ntc95K6KtRu3glGc=`,
   },
   {
     id: 4,

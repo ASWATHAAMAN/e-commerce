@@ -13,7 +13,7 @@ const Navbar = () => {
   };
   return (
     <>
-      <nav className=" mb-[1.5rem] px-[5rem] py-[1rem] flex items-center justify-between shadow-lg">
+      <nav className=" mb-[1.5rem] px-[5rem] py-[1rem] flex items-center justify-between shadow-2xl fixed bg-white w-[100%] mx-auto mt-[-6rem]">
         <div className="w-[15%] h-[10%] object-contain ">
           <img
             src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS989GRiByc43QI2Wn6Ci3r7oarr-aGcZkoFA&usqp=CAU"
