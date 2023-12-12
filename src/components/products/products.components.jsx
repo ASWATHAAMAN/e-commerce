@@ -15,7 +15,7 @@ const Product = ({ product }) => {
   return (
     <>
       <Navbar />
-      <div className="flex flex-wrap justify-center my-[2rem] gap-8 ">
+      <div className="flex flex-wrap justify-center items-center my-[6rem] gap-8 ">
         {product.map((item) => {
           const { id, imageUrl, name, price } = item;
           return (

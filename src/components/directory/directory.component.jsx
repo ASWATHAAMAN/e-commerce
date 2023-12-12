@@ -1,11 +1,20 @@
 import { useNavigate } from "react-router-dom";
 import { Categories } from "../../constants";
 import { FaRegHandPointDown } from "react-icons/fa";
+import { PiHandbagLight } from "react-icons/pi";
+import { PiShootingStarDuotone } from "react-icons/pi";
+import { CiGift } from "react-icons/ci";
+import { TbHelpCircle } from "react-icons/tb";
 
 const Directory = () => {
   const navigate = useNavigate();
   const navigateToCategory = (title) => {
     navigate(`/shop/PRODUCTS`);
+  };
+
+  const windowHandler = () => {
+    const screenTop = window.scrollTo(top);
+    return screenTop;
   };
   return (
     <>
@@ -100,6 +109,108 @@ const Directory = () => {
           }
           App
         </span>
+      </div>
+      <div
+        className="text-center border border-black w-[100%] mx-auto text-[20px] font-[500] bg-blue-900 text-white hover:bg-blue-800 cursor-pointer py-[0.5rem] pb-[1rem]"
+        onClick={windowHandler}
+      >
+        <button>Back to top</button>
+      </div>
+      <footer className="flex justify-around items-center gap-8 pb-[1rem] bg-blue-950 text-white pt-[1rem]">
+        <div className="flex flex-col justify-center mt-[-7rem] gap-1 ">
+          <h4 className="text-[18px] font-[700]">Get to Know Us</h4>
+          <a href="#" className=" font-[600] hover:underline">
+            About Us
+          </a>
+          <a href="#" className=" font-[600] hover:underline">
+            Careers
+          </a>
+          <a href="#" className=" font-[600] hover:underline">
+            Press Releases
+          </a>
+          <a href="#" className=" font-[600] hover:underline">
+            Brandlance Science
+          </a>
+        </div>
+        <div className="flex flex-col justify-center mt-[-8.5rem] gap-1 ">
+          <h4 className="text-[18px] font-[700]">Connect with Us</h4>
+          <a href="#" className=" font-[600] hover:underline">
+            Facebook
+          </a>
+          <a href="#" className=" font-[600] hover:underline">
+            Twitter
+          </a>
+          <a href="#" className=" font-[600] hover:underline">
+            Instagram
+          </a>
+        </div>
+        <div className="flex flex-col justify-center gap-1 ">
+          <h4 className="text-[18px] font-[700]">Make Money with Us</h4>
+          <a href="#" className=" font-[600] hover:underline">
+            Sell on Brandlance
+          </a>
+          <a href="#" className=" font-[600] hover:underline">
+            Sell under Brandlance Accelerator
+          </a>
+          <a href="#" className=" font-[600] hover:underline">
+            Protect and Build Your Brand
+          </a>
+          <a href="#" className=" font-[600] hover:underline">
+            Brandlance Global Selling
+          </a>
+          <a href="#" className=" font-[600] hover:underline">
+            Become an Affiliate
+          </a>
+          <a href="#" className=" font-[600] hover:underline">
+            Fulfilment by Brandlance
+          </a>
+          <a href="#" className=" font-[600] hover:underline">
+            Advertise your Products
+          </a>
+          <a href="#" className=" font-[600] hover:underline">
+            Brandlance Pay on Merchants
+          </a>
+        </div>
+        <div className="flex flex-col justify-center mt-[-4rem] gap-1 ">
+          <h4 className="text-[18px] font-[700]">Let Us Help You</h4>
+          <a href="#" className=" font-[600] hover:underline">
+            COVID-19 and Brandlance
+          </a>
+          <a href="#" className=" font-[600] hover:underline">
+            Your Account
+          </a>
+          <a href="#" className=" font-[600] hover:underline">
+            {" "}
+            Returns Centre
+          </a>
+          <a href="#" className=" font-[600] hover:underline">
+            100% Purchase Protection
+          </a>
+          <a href="#" className=" font-[600] hover:underline">
+            BrandLance App Download
+          </a>
+          <a href="#" className=" font-[600] hover:underline">
+            Help
+          </a>
+        </div>
+      </footer>
+      <div className="flex justify-center items-center gap-20 font-[600] py-[1rem] bg-cyan-100">
+        <div className="flex items-center gap-2">
+          <PiHandbagLight />
+          <a href="#">Become a Seller</a>
+        </div>
+        <div className="flex items-center gap-2">
+          <PiShootingStarDuotone />
+          <a href="#">Advertise</a>
+        </div>
+        <div className="flex items-center gap-2">
+          <CiGift />
+          <a href="#">Gift Cards</a>
+        </div>
+        <div className="flex items-center gap-2">
+          <TbHelpCircle />
+          <a href="#">Help Center</a>
+        </div>
       </div>
     </>
   );

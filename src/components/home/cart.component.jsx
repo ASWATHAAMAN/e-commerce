@@ -1,6 +1,7 @@
 import { Outlet } from "react-router-dom";
 import { CheckOutItem } from "../checkout/CheckoutItem.component";
 import { CartItem } from "./cartItem.component";
+import { Navbar } from "../navbar/navbar.component";
 // import { ProductProviderGlobalContext } from "../../context/products/product.context";
 // import { CartItem } from "./cartItem.component";
 
@@ -8,7 +9,8 @@ const Cart = () => {
   // const {cartItems} = ProductProviderGlobalContext()
   return (
     <>
-      <div className="border-2 border-black w-[85%] mx-auto pb-[2rem]">
+    <Navbar/>
+      <div className="border-2 border-black mt-[6rem] w-[85%] mx-auto pb-[2rem]">
         <Outlet />
         <main className="flex justify-evenly items-center text-[20px] font-[700] underline py-[2rem] ">
           <span>Product</span>

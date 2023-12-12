@@ -3,7 +3,7 @@ import SignUpForm from "../SignUpForm/signupform.component";
 const SignIn = () => {
   return (
     <>
-      <main className="flex justify-between items-start w-[85%] mt-[4rem] mx-auto">
+      <main className="flex justify-between items-start w-[85%] mt-[6rem] mx-auto">
         <SignInForm />
         <SignUpForm />
       </main>
